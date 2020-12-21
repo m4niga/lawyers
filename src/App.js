@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import Dropdown from './components/Dropdown/Dropdown';
 import Hero from './components/Hero/Hero';
+import InfoSection from './components/InfoSection/InfoSection';
 import Navbar from './components/Navbar/Navbar';
 import GlobalStyle from './globalStyles';
+import { InfoData, InfoData2 } from './utils/data/InfoData';
 import { SliderData } from './utils/data/SliderData';
 
 
@@ -23,6 +25,8 @@ function App() {
      toggle={toggle}
      />
      <Hero slides={SliderData}/>
+     <InfoSection {...InfoData}/>
+     <InfoSection {...InfoData2}/>
     </div>
   );
 }
