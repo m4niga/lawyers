@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { menuData } from '../../utils/data/MenuData';
 import { Button } from './Button/Button';
 import { FaBars } from 'react-icons/fa';
+import { Link as LinkScroll} from "react-scroll";
+
 
 const Nav = styled.nav`
   height: 60px;
@@ -13,6 +15,8 @@ const Nav = styled.nav`
   z-index:1000;
   position: fixed;
   width:100%;
+  background-color: ${({ scrollY }) => !!scrollY  && 'black'};
+  transition: .3s background-color;
 `
 
 
@@ -56,7 +60,7 @@ const NavMenu = styled.div`
   }
 `
 
-const NavMenuLinks = styled(Link)`
+const NavMenuLinks = styled.div`
   ${NavLink}
 `
 
@@ -70,23 +74,32 @@ const NavBtn = styled.div`
   }
 `
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, scrollY }) => {
+
   return (
-    <Nav>
+    <Nav scrollY={scrollY}>
       <Logo to='/'>
         ATS
             </Logo>
 
-      <MenuBars onClick={toggle}/>
+      <MenuBars onClick={toggle} />
 
       <NavMenu>
         {
           menuData.map((item, index) => (
+            <LinkScroll
+              activeClass="active"
+              to={item.id}
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              key={index}>
+              <NavMenuLinks>
+                {item.title}
+              </NavMenuLinks>
+            </LinkScroll>
 
-            <NavMenuLinks to={item.to} key={index}>
-              {item.title}
-            </NavMenuLinks>
-            
           ))
         }
       </NavMenu>

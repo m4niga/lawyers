@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { menuData } from '../../utils/data/MenuData'
 import { Button } from '../Navbar/Button/Button'
 import { FaTimes } from 'react-icons/fa'
 
+import { Link as LinkScroll } from "react-scroll";
+
 const DropdownContainer = styled.div`
     position: fixed;
-    z-index:999;
+    z-index:1001;
     width: 100%;
     height:100%;
     background: #cd853f;
@@ -45,7 +46,7 @@ const DropdownMenu = styled.div`
         grid-template-rows: repeat(4,80px);
     }
 `
-const DropdownLink = styled(Link)`
+const DropdownLink = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
@@ -75,12 +76,22 @@ const Dropdown = ({ isOpen, toggle}) => {
                 <DropdownMenu>
                     {
                         menuData.map((item, index) => (
+                            <LinkScroll
+                            activeClass="active"
+                            to={item.id}
+                            spy={true}
+                            smooth={true}
+                            offset={0}
+                            duration={500}
+                            key={index}>
                             <DropdownLink
+                            onClick={toggle}
                                 to={item.to}
                                 key={index}
                             >
                                 {item.title}   
                             </DropdownLink>
+                            </LinkScroll>
                         ))
                     }
                 </DropdownMenu>

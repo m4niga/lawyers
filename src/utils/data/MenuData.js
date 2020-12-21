@@ -1,14 +1,17 @@
 export const menuData = [
   {
     title: 'Inicio', 
-    to: '/' 
+    to: '/',
+    id: 'inicio' 
   }, 
   {
     title: 'Nosotros', 
-    to: '/' 
+    to: '/',
+    id: 'nosotros' 
   }, 
   {
     title: 'Servicios', 
-    to: '/' 
+    to: '/',
+    id: 'servicios' 
   }
 ]

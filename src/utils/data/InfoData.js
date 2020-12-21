@@ -8,7 +8,8 @@ export const InfoData = {
     buttonLabel:'Ver Más',
     image:Image1,
     reverse:false,
-    delay: 100
+    delay: 100,
+    id: 'nosotros'
 }
 
 export const InfoData2 = {
@@ -18,5 +19,6 @@ export const InfoData2 = {
     buttonLabel:'Ver Más',
     image:Image2,
     reverse:true,
-    delay: 300
+    delay: 300,
+    id: 'servicios'
 }
