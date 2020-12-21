@@ -10,9 +10,5 @@ export const menuData = [
   {
     title: 'Servicios', 
     to: '/' 
-  },
-  {
-    title: 'Contacto', 
-    to: '/' 
   }
 ]
