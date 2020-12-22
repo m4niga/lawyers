@@ -5,13 +5,28 @@ export const menuData = [
     id: 'inicio' 
   }, 
   {
-    title: 'Nosotros', 
+    title: 'Objetivo', 
     to: '/',
-    id: 'nosotros' 
+    id: 'objetivo' 
   }, 
   {
     title: 'Servicios', 
     to: '/',
     id: 'servicios' 
+  }, 
+  {
+    title: 'Socios', 
+    to: '/socios',
+    id: 'socios' 
+  }, 
+  {
+    title: 'Plan', 
+    to: '/plan',
+    id: 'plan' 
+  }, 
+  {
+    title: 'Blog', 
+    to: '/blog',
+    id: 'blog' 
   }
 ]

@@ -5,9 +5,9 @@ import Hero from './components/Hero/Hero';
 import InfoSection from './components/InfoSection/InfoSection';
 import Navbar from './components/Navbar/Navbar';
 import GlobalStyle from './globalStyles';
-import { InfoData, InfoData2 } from './utils/data/InfoData';
+import { InfoObjetivo, InfoPlan, InfoServicios, InfoSocios } from './utils/data/InfoData';
 import { SliderData } from './utils/data/SliderData';
-
+import { Footer } from './components/Footer/Footer'
 
 
 function App() {
@@ -17,7 +17,6 @@ function App() {
 
   function logit() {
     setScrollY(window.pageYOffset);
-    console.log(scrollY);
   }
   
   useEffect(() => {
@@ -45,9 +44,12 @@ function App() {
      toggle={toggle}
      />
      <Hero slides={SliderData}/>
-     <InfoSection {...InfoData}/>
-     <InfoSection {...InfoData2} />
+     <InfoSection {...InfoObjetivo}/>
+     <InfoSection {...InfoServicios} />
+     <InfoSection {...InfoSocios} />
+     <InfoSection {...InfoPlan} />
      <BackToTop scrollY={scrollY}/>
+     <Footer />
     </div>
   );
 }

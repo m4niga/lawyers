@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components/macro';
-import { Link } from 'react-router-dom';
 import { menuData } from '../../utils/data/MenuData';
 import { Button } from './Button/Button';
 import { FaBars } from 'react-icons/fa';
 import { Link as LinkScroll} from "react-scroll";
+import logo from '../../images/logo-solo.png'
 
 
 const Nav = styled.nav`
@@ -15,13 +15,13 @@ const Nav = styled.nav`
   z-index:1000;
   position: fixed;
   width:100%;
-  background-color: ${({ scrollY }) => !!scrollY  && 'black'};
+  background-color: ${({ scrollY }) => !!scrollY  && 'white'};
+
   transition: .3s background-color;
 `
 
 
 const NavLink = css`
-  color: #fff;
   display:flex;
   align-items:center;
   padding: 0 1rem;
@@ -30,9 +30,10 @@ const NavLink = css`
   text-decoration:none;
 `
 
-const Logo = styled(Link)`
-  ${NavLink}
-  font-style: italic;
+const LogoImg = styled.img`
+width:40px;
+height:45px;
+transform: translateY(-10px);
 `
 const MenuBars = styled(FaBars)`
   display:none;
@@ -61,7 +62,9 @@ const NavMenu = styled.div`
 `
 
 const NavMenuLinks = styled.div`
-  ${NavLink}
+  ${NavLink};
+
+  color: ${({ scrollY }) => !scrollY  ? 'white' : 'black'};
 `
 
 const NavBtn = styled.div`
@@ -78,9 +81,9 @@ const Navbar = ({ toggle, scrollY }) => {
 
   return (
     <Nav scrollY={scrollY}>
-      <Logo to='/'>
-        ATS
-            </Logo>
+      <LogoImg src={logo} to='/'>
+        
+      </LogoImg>
 
       <MenuBars onClick={toggle} />
 
@@ -95,7 +98,7 @@ const Navbar = ({ toggle, scrollY }) => {
               offset={0}
               duration={500}
               key={index}>
-              <NavMenuLinks>
+              <NavMenuLinks scrollY={scrollY}>
                 {item.title}
               </NavMenuLinks>
             </LinkScroll>

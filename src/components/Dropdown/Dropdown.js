@@ -38,12 +38,12 @@ const DropdownWrapper = styled.div`
 const DropdownMenu = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4,80px);
+    grid-template-rows: repeat(5,30px);
     text-align: center;
     margin-bottom:4rem;
 
     @media screen and (max-width: 480px){
-        grid-template-rows: repeat(4,80px);
+        grid-template-rows: repeat(5,80px);
     }
 `
 const DropdownLink = styled.div`
