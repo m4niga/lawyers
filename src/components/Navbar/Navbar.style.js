@@ -26,6 +26,11 @@ export const LogoImg = styled.img`
 width:40px;
 height:45px;
 transform: translateY(-10px);
+&:hover{
+  width:42px;
+  height:47px;
+}
+transition: .3s ease all;
 `
 
 export const MenuBars = styled(FaBars)`
@@ -57,6 +62,15 @@ margin-right: -48px;
 export const NavMenuLinks = styled.div`
 ${NavLink};
 color: ${({ scrollY }) => !scrollY  ? 'white' : 'black'};
+text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+text-transform:uppercase;
+font-weight:300;
+&:hover{
+
+  font-weight:400;
+  letter-spacing: .1em;
+}
+transition: .3s ease all;
 `
 
 export const NavBtn = styled.div`

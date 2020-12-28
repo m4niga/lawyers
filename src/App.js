@@ -9,10 +9,8 @@ import { InfoObjetivo, InfoPlan, InfoServicios, InfoSocios } from './utils/data/
 import { SliderData } from './utils/data/SliderData';
 import { Footer } from './components/Footer/Footer'
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
   const [scrollY, setScrollY] = useState(0);
 
   function logit() {
