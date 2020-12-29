@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 export const Section = styled.section`
 width: 100%;
-height: 100%;
-padding: 4rem 0rem;
+min-height: 100vh;
+padding: 4rem 1rem;
+position:relative;
 `;
 
 export const Container = styled.div`
@@ -17,6 +18,7 @@ margin: 0rem 1rem;
 @media screen and (max-width: 768px){
 grid-template-columns: 1fr;
 padding: 0rem;
+margin-top:4rem;
 }
 `;
 
@@ -64,7 +66,7 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 @media screen and (max-width: 768px){ 
     width: 100%;
     height: 100%;
-    margin-top:3rem;
+    margin-top:10rem;
 }
 }
 `;

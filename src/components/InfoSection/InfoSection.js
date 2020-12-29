@@ -14,11 +14,9 @@ const InfoSection = ({
     id
 }) => {
 
-
   useEffect(() => {
     Aos.init({duration: 500})
   }, [])
-
 
     return (
         <s.Section id={id}>

@@ -8,6 +8,8 @@ import GlobalStyle from './globalStyles';
 import { InfoObjetivo, InfoPlan, InfoServicios, InfoSocios } from './utils/data/InfoData';
 import { SliderData } from './utils/data/SliderData';
 import { Footer } from './components/Footer/Footer'
+import Socios from './components/Socios/Socios';
+import Plan from './components/Plan/Plan';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +46,8 @@ function App() {
      <Hero slides={SliderData}/>
      <InfoSection {...InfoObjetivo}/>
      <InfoSection {...InfoServicios} />
-     <InfoSection {...InfoSocios} />
-     <InfoSection {...InfoPlan} />
+     <Socios />
+     <Plan />
      <BackToTop scrollY={scrollY}/>
      <Footer />
     </div>

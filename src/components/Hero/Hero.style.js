@@ -1,5 +1,5 @@
 
-import styled, { css } from 'styled-components/macro';
+import styled, { css, keyframes } from 'styled-components/macro';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 
@@ -8,6 +8,10 @@ export const HeroSection = styled.section`
   max-height:1100px;
   position:relative;
   overflow:hidden;
+  
+  @media screen and (max-width: 768px){
+    margin-bottom:5rem;
+}
 `
 
 export const HeroWrapper = styled.div`
@@ -55,6 +59,18 @@ align-items:center;
 
 }
 `;
+
+const fadeImage = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
+`;
+
+
 export const HeroImage = styled.img`
 position:absolute;
 top:0;
@@ -62,6 +78,19 @@ left:0;
 width:100vw;
 height:100vh;
 object-fit: cover;
+
+animation: ${fadeImage} .5s linear;
+
+`;
+
+const fadeContent = keyframes`
+  from {
+    right: 100%;
+  }
+
+  to {
+    right: 0%;
+  }
 `;
 export const HeroContent = styled.div`
 position:relative;
@@ -72,6 +101,7 @@ max-width: 1600px;
 width: calc(100% - 100px);
 color: #fff;
 
+animation: ${fadeContent} .5s ease-out;
 h1 {
   font-size: clamp(1rem, 8vw, 2rem);
   font-weight:400;
